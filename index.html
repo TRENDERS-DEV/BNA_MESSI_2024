@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/general.css">
-  <link rel="stylesheet" href="assets/css/home/index.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -24,32 +23,139 @@
         font-family: 'ExpertSans-Bold';
         src: url("/assets/fonts/ExpertSans-Bold.ttf") format('truetype');
     }
+    @font-face {
+        font-family: 'BebasNeue-Regular';
+        src: url("/assets/fonts/BebasNeue-Regular.ttf") format('truetype');
+    }
+    @media only screen and (max-width: 767px) {
+        .question_background {
+            background-image: url("assets/img/result_bg_mobile.png");
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        .question_background {
+            background-image: url("assets/img/result_bg_desktop.png");
+        }
+    }
   </style>
 </head>
 
 <body>
     <div class="container main-container">
-        <div class="background">
-            <img class="img-fluid desktop" src="assets/img/home_desktop.png" />
-            <img class="img-fluid mobile" src="assets/img/home_mobile.png" />
-            <div class="container">
-                <div class="hero-text-container">
-                    <div class="wrapper">
-                        <div class="img-container desktop">
-                            <img src="assets/img/home_text.png" class="img-fluid" />
-                        </div>                
-                        <p>Contestá las 5 preguntas y demostrá cuánto sabés de Messi.</p>
-                        <a class="play-btn btn-link" href="trivia/">Jugar</a>
+        <section id="section-01">
+            <div class="background">
+                <img class="img-fluid desktop" src="assets/img/home_desktop.png" />
+                <img class="img-fluid mobile" src="assets/img/home_mobile.png" />
+                <div class="container">
+                    <div class="hero-text-container">
+                        <div class="wrapper">
+                            <div class="img-container desktop">
+                                <img src="assets/img/home_text.png" class="img-fluid" />
+                            </div>                
+                            <p>Contestá las 5 preguntas y demostrá cuánto sabés de Messi.</p>
+                            <a class="play-btn btn-link" href="">Jugar</a>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </section>
+
+        <section id="section-02">
+            <div class="trivia-bg-container">
+                <img class="img-fluid desktop" src="assets/img/trivia_desktop.png" />
+                <img class="img-fluid mobile" src="assets/img/trivia_mobile.png" />
+                <div id="num" class="counter"></div>
+            </div>
+        </section>
+
+        <section id="section-03">
+            <div class="question_background">
+                <div class="trivia_progress_container">
+                    <p>PENALES</p>
+                    <div class="trivia_progress">
+                        <div id="option1_penalty"></div>
+                        <div id="option2_penalty"></div>
+                        <div id="option3_penalty"></div>
+                        <div id="option4_penalty"></div>
+                        <div id="option5_penalty"></div>
                     </div>
                 </div>
-            </div>            
-        </div>
+                <form>
+                    <div class="img-container">
+                        <img class="img-fluid" src="assets/img/penalty_title.png" />
+                    </div>
+                    <p>¿Cuántos balones de oro tiene Lionel Messi?</p>
+                    <div class="form-group">
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+                        <label for="option1">6</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label for="option2">7</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                        <label for="option3">8</label>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="section-04">
+            <div id="success" class="trivia-bg-container">
+                <img class="img-fluid desktop" src="assets/img/success_bg_desktop.png" />
+                <img class="img-fluid mobile" src="assets/img/success_bg_mobile.png" />
+                <div class="result-text-container">
+                  <img class="img-fluid desktop" src="assets/img/success_text.png" />
+                  <img class="img-fluid mobile" src="assets/img/success_text_mobile.png" />
+                </div>
+            </div>
+
+            <div id="error" class="trivia-bg-container">
+                <img class="img-fluid desktop" src="assets/img/error_bg_desktop.png" />
+                <img class="img-fluid mobile" src="assets/img/error_bg_mobile.png" />
+                <div class="result-text-container">
+                  <img class="img-fluid desktop" src="assets/img/error_text.png" />
+                  <img class="img-fluid mobile" src="assets/img/error_text_mobile.png" />
+                </div>
+            </div>
+        </section>
+        
+        <section id="section-05">
+            <div class="question_background">
+                <div class="share-result-container">
+                    <p>¡COMPARTÍ TU RESULTADO!</p>
+                    <a href="" target="_blank">
+                        <img class="img-fluid" src="assets/img/share-icon.svg" />
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-5 card-container">
+                        <p class="legend">Lionel Messi<br/>Embajador Mastercard</p>
+                        <img class="img-fluid" src="assets/img/mastercard.png" />
+                    </div>
+                    <div class="col-6 col-md-7">
+                        <div>
+                            <img class="img-fluid" src="assets/img/mastercard_messi.png" />
+                            <img class="img-fluid desktop" src="assets/img/result_text_desktop.png" />
+                            <img class="img-fluid mobile" src="assets/img/result_text_mobile.png" />
+                        </div>
+                        <p class="cta desktop">Copate y jugá en <a href="" target="_blank">simplificate.com.ar/XXXXXXX</a></p>
+                        <img class="img-fluid" src="assets/img/bna_logo.png" />                        
+                    </div>
+                    <div class="col-12 mobile">
+                        <p class="cta">Copate y jugá en<br/><a href="" target="_blank">simplificate.com.ar/XXXXXXX</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
   
   <p></p>
   <script src="assets/vendor/jquery.js"></script>
   <script src="assets/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
 
 </body>
 
