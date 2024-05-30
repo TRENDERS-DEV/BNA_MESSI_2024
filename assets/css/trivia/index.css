@@ -42,3 +42,107 @@
       transform: scale(1, 1);
     }
   }
+  .trivia_progress_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 420px;
+    margin: auto;
+  }
+  .trivia_progress_container p {
+    color: #FFFFFF;
+    font-family: "ExpertSans-Regular", sans-serif;
+    font-size: 22px;
+    margin: 0;
+    margin-right: 24px;
+  }
+  .trivia_progress {
+    display: flex;
+  }
+  .trivia_progress div {
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    margin-left: 16px;
+  }
+  .trivia_progress div.green {
+    background-color: #1FB288;
+    border-color: #1FB288;
+  }
+  .trivia_progress div.orange {
+    background-color: #F26C29;
+    border-color: #F26C29;
+  }
+  .question_background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 16px;    
+  }
+  .question_background form p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'ExpertSans-Regular', sans-serif;
+    font-size: 22px;
+  }
+  .question_background .form-group {
+    position: relative;
+    max-width: 739px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .question_background .form-group input {
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.question_background .form-group label {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-family: "ExpertSans-Bold", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    cursor: pointer;
+}
+.question_background .form-group input:checked + label {
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.question_background .img-container {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+@media only screen and (max-width: 767px) {
+    .question_background {
+        min-height: 552px;
+        padding: 0 16px;
+        padding-top: 80px;
+    }
+    .question_background form p {
+        font-size: 18px;
+    }
+    .trivia_progress_container p {
+        font-size: 16px;
+    }
+    .trivia_progress div {
+        width: 16px;
+        height: 16px;
+    }
+    .trivia_progress_container {
+        margin-bottom: 40px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .question_background {
+        border-radius: 27px;
+    }
+}
