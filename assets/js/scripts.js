@@ -148,7 +148,7 @@ function showSection3() {
     var answers = '';
 
     $('#question_text').html($oQuestion.question);
-    $('#penalty_title').html('PENAL ' + (parseInt(currentQuestion) + 1));
+    $('#penalty_title').html('<span class="text-container"><span class="bold">PENAL </span>' + (parseInt(currentQuestion) + 1) + '</span>');
 
     $.each($oQuestion.answers, function (i, oAnswer) {
 

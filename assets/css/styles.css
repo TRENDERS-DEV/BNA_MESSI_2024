@@ -339,4 +339,18 @@ RESPONSIVE
 section:not(#section-01), #section-04.error #success, #section-04.success #error {
     display: none;
 }
+#section-03 .text-container {
+    font-family: "ExpertSans-Regular", sans-serif;
+    color: #353432;
+    font-size: 24px;
+    letter-spacing: 1.1px;
+}
+.text-container .bold {
+    font-family: "BebasNeue-Regular", sans-serif;    
+}
+#section-03 #penalty_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
