@@ -1,6 +1,9 @@
 /**
 SECTION 01
 */
+.main-container {
+    overflow-x: hidden;
+}
 .background {
     position: relative;
 }
