@@ -254,6 +254,18 @@ SECTION 05
     justify-content: center;
     padding-right: 16px;
 }
+
+.share-result-container .share_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 16px;
+}
+
 /**
 RESPONSIVE
 */

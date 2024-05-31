@@ -99,6 +99,9 @@ const QUESTIONS = [
 
 $(document).ready(function () {
 
+    $('#section-01').hide();
+    $('#section-05').show();
+
     if (QUESTIONS_QTY > QUESTIONS.length) {
         alert('ERROR. QUESTIONS_QTY > QUESTIONS');
     }
@@ -226,3 +229,15 @@ function arrayShuffle(array) {
 
     return array.slice(0, QUESTIONS_QTY);
 }
+
+$("#share_icon").jsSocials({
+    shares: [{
+            share: "facebook",
+            logo: "/assets/img/share-icon.svg"
+        }],
+    url: "https://bnamessi.tdev.com.ar/",
+    text: "Contestá las 3 preguntas y demostrá cuánto sabés de Messi.",
+    showLabel: false,
+    showCount: false,
+    shareIn: "popup"
+});
