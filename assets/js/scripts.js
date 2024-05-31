@@ -99,9 +99,6 @@ const QUESTIONS = [
 
 $(document).ready(function () {
 
-    $('#section-01').hide();
-    $('#section-05').show();
-
     if (QUESTIONS_QTY > QUESTIONS.length) {
         alert('ERROR. QUESTIONS_QTY > QUESTIONS');
     }
