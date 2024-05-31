@@ -1,120 +1,126 @@
 const COUNTDOWN = 3;
 const QUESTIONS_QTY = 3;
-var step = 0;
+var aQuestions = [];
+var currentQuestion = 0;
+var aUserAnswers = [];
 
 const QUESTIONS = [
     {
-        "question": "1 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuántos balones de oro tiene Lionel Messi?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "7", "valid": 0},
+                    {"answer": "8", "valid": 1},
+                    {"answer": "9", "valid": 0}
                 ]
     },
     {
-        "question": "2 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿En qué año ganó Messi su primer Balón de Oro?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "2007", "valid": 0},
+                    {"answer": "2008", "valid": 0},
+                    {"answer": "2009", "valid": 1}
                 ]
     },
     {
-        "question": "3 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuál es la carta que lleva tatuada en la piel?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "As de espadas", "valid": 0},
+                    {"answer": "Cinco de copas", "valid": 1},
+                    {"answer": "Diez de oro", "valid": 0}
                 ]
     },
     {
-        "question": "4 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Contra qué equipo anotó Messi 5 goles durante un partido de la UEFA Champions League en 2012?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "Bayer Leverkusen", "valid": 1},
+                    {"answer": "Milan", "valid": 0},
+                    {"answer": "CSKA Moscú", "valid": 0}
                 ]
     },
     {
-        "question": "5 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Con quién compartió habitación históricamente en las concentraciones?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "Angel Di María", "valid": 0},
+                    {"answer": "Nicolás Otamendi", "valid": 0},
+                    {"answer": "Sergio Agüero", "valid": 1}
                 ]
     },
     {
-        "question": "6 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuántos goles marcó Messi en su partido más goleador con la Selección Argentina?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "3", "valid": 0},
+                    {"answer": "5", "valid": 1},
+                    {"answer": "7", "valid": 0}
                 ]
     },
     {
-        "question": "7 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuál es el nombre completo de Messi?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "Leonel Diego Messi Cuccittini", "valid": 0},
+                    {"answer": "Lionel Javier Messi", "valid": 0},
+                    {"answer": "Lionel Andrés Messi Cuccittini", "valid": 1}
                 ]
     },
     {
-        "question": "8 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuántas finales de Copa América jugó Messi?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "3", "valid": 0},
+                    {"answer": "4", "valid": 1},
+                    {"answer": "5", "valid": 0}
                 ]
     },
     {
-        "question": "9 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuántos goles le hizo Messi a Brasil en la victoria 4-3 del 2012 en Estados Unidos?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "1", "valid": 0},
+                    {"answer": "2", "valid": 0},
+                    {"answer": "3", "valid": 1}
                 ]
     },
     {
-        "question": "10 ¿Cuántos balones de oro tiene Lionel Messi?",
+        "question": "¿Cuántos goles hizo Messi en el mundial de Qatar 2022?",
         "answers":
                 [
-                    {"answer_1": "6", "valid": 1},
-                    {"answer_2": "7", "valid": 0},
-                    {"answer_3": "8", "valid": 0}
+                    {"answer": "3", "valid": 0},
+                    {"answer": "7", "valid": 1},
+                    {"answer": "10", "valid": 0}
                 ]
     }
 ];
 
 $(document).ready(function () {
 
-    //console.log("ready!");
-    //var shuffledArray = arrayShuffle(QUESTIONS);
-    //console.log(shuffledArray);
+    if (QUESTIONS_QTY > QUESTIONS.length) {
+        alert('ERROR. QUESTIONS_QTY > QUESTIONS');
+    }
+
+    currentQuestion = 0;
+    aQuestions = arrayShuffle(QUESTIONS);
+    aUserAnswers = Array.apply(null, Array(QUESTIONS_QTY)).map(function () {});
 });
 
 $('#play-btn').on('click', function (event) {
 
     event.preventDefault();
 
-    $('#section-01').fadeOut(400, "swing", showSection2);
+    $('#section-01').fadeOut(400, 'swing', showSection2);
 });
 
 function showSection2() {
 
-    $('#section-02').fadeIn(400, "swing", showSection2Countdown);
+    $('#section-02').fadeIn(400, 'swing', showCountdown);
 }
 
-function showSection2Countdown() {
+function showCountdown() {
 
     var remaining = COUNTDOWN;
 
@@ -126,7 +132,7 @@ function showSection2Countdown() {
 
         if (remaining < 0) {
             clearInterval(intervalId);
-            $('#section-02').fadeOut(400, "swing", showSection3);
+            $('#section-02').fadeOut(400, 'swing', showSection3);
             return;
         }
 
@@ -137,7 +143,78 @@ function showSection2Countdown() {
 
 function showSection3() {
 
-    $("#section-03").fadeIn();
+    $oQuestion = aQuestions[currentQuestion];
+    showProgress();
+    var answers = '';
+
+    $('#question_text').html($oQuestion.question);
+    $('#penalty_title').html('PENAL ' + (parseInt(currentQuestion) + 1));
+
+    $.each($oQuestion.answers, function (i, oAnswer) {
+
+        answers += '<div class="form-group">\n\
+                        <input type="radio" class="btn-check" name="answer[]" data-is_valid="' + oAnswer.valid + '" autocomplete="off">\n\
+                        <label>' + oAnswer.answer + '</label>\n\
+                    </div>';
+    });
+
+    $('#question_answers').html(answers);
+
+    $('#section-03').fadeIn(400, 'swing');
+}
+
+function showProgress() {
+
+    var progress = '';
+
+    $.each(aUserAnswers, function (i, isValid) {
+
+        if (isValid === 1) {
+            progress += '<div id="option1_penalty" class="green"></div>';
+        } else if (isValid === 0) {
+            progress += '<div id="option1_penalty" class="orange"></div>';
+        } else {
+            progress += '<div id="option1_penalty"></div>';
+        }
+    });
+
+    $('#trivia_progress').html(progress);
+}
+
+$(document).on('click', '.btn-check', function () {
+
+    var isValid = $(this).data('is_valid');
+    aUserAnswers[currentQuestion] = isValid;
+    currentQuestion++;
+
+    $('#section-04').removeClass('success');
+    $('#section-04').removeClass('error');
+
+    if (isValid === 1) {
+        $('#section-04').addClass('success');
+    } else {
+        $('#section-04').addClass('error');
+    }
+
+    $('#section-03').fadeOut(400, 'swing', showSection4);
+});
+
+function showSection4() {
+
+    $('#section-04').fadeIn(400, 'swing');
+
+    setTimeout(() => {
+        if (QUESTIONS_QTY > currentQuestion) {
+            $('#section-04').hide(400, 'swing', showSection3);
+        } else {
+            $('#section-04').hide(400, 'swing', showSection5);
+        }
+    }, 3000);
+}
+
+function showSection5() {
+
+    $('#section-05').fadeIn(400, 'swing');
 }
 
 function arrayShuffle(array) {
@@ -149,90 +226,3 @@ function arrayShuffle(array) {
 
     return array.slice(0, QUESTIONS_QTY);
 }
-
-/*******************************************************************************/
-
-/*
-function countdown() {
-
-    document.getElementById('countdown_num').innerHTML = remaining;
-
-    if (!remaining--) {
-        setTimeout(() => {
-            $("#section-02").fadeOut();
-        }, 1000);
-        setTimeout(() => {
-            $("#section-03").fadeIn();
-        }, 1500);
-
-        return;
-    }
-    setTimeout(countdown, 1000);
-}
-
-$(document).ready(function () {
-
-    $(".play-btn").on("click", function (e) {
-        e.preventDefault();
-        setTimeout(() => {
-            $("#section-01").fadeOut();
-        }, 1000);
-        setTimeout(() => {
-            $("#section-02").fadeIn();
-        }, 1500);
-        countdown();
-    });
-
-    $("#option1").on("click", function () {
-        triggerError(this);
-    });
-    $("#option2").on("click", function () {
-        triggerError(this);
-    });
-    $("#option3").on("click", function () {
-        triggerSuccess(this);
-        $("#section-03").fadeOut();
-    });
-});
-
-function triggerError(option) {
-
-    let penalty_option = $(option).attr('id');
-
-    $("#section-04").addClass("error");
-    setTimeout(() => {
-        $("#section-03").fadeOut();
-    }, 1500);
-    setTimeout(() => {
-        $("#section-04").fadeIn();
-    }, 2000);
-    countdown();
-    $("#" + penalty_option + "_penalty").removeClass("green").addClass("orange");
-    setTimeout(() => {
-        $("#section-04").hide();
-    }, 3000);
-    setTimeout(() => {
-        $("#section-05").fadeIn();
-    }, 3800);
-}
-function triggerSuccess(option) {
-
-    let penalty_option = $(option).attr('id');
-
-    $("#section-04").addClass("success");
-    setTimeout(() => {
-        $("#section-03").fadeOut();
-    }, 1500);
-    setTimeout(() => {
-        $("#section-04").fadeIn();
-    }, 2000);
-    $("#" + penalty_option + "_penalty").removeClass("orange").addClass("green");
-    setTimeout(() => {
-        $("#section-04").hide();
-    }, 3000);
-    setTimeout(() => {
-        $("#section-05").fadeIn();
-    }, 3800);
-}
-
-*/

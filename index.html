@@ -75,31 +75,12 @@
                 <div class="question_background">
                     <div class="trivia_progress_container">
                         <p>PENALES</p>
-                        <div class="trivia_progress">
-                            <div id="option1_penalty"></div>
-                            <div id="option2_penalty"></div>
-                            <div id="option3_penalty"></div>
-                            <div id="option4_penalty"></div>
-                            <div id="option5_penalty"></div>
-                        </div>
+                        <div id="trivia_progress" class="trivia_progress"></div>
                     </div>
                     <form>
-                        <div class="img-container">
-                            <img class="img-fluid" src="assets/img/penalty_title.png" />
-                        </div>
-                        <p>¿Cuántos balones de oro tiene Lionel Messi?</p>
-                        <div class="form-group">
-                            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-                            <label for="option1">6</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                            <label for="option2">7</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                            <label for="option3">8</label>
-                        </div>
+                        <div id="penalty_title" class="img-container"></div>
+                        <p id="question_text"></p>
+                        <div id="question_answers"></div>
                     </form>
                 </div>
             </section>

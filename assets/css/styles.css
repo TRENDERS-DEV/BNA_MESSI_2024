@@ -193,6 +193,9 @@ SECTIONS 02 - 04
     text-align: center;
     margin-top: 32px;
     margin-bottom: 24px;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
 }
 /**
 SECTION 05
