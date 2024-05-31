@@ -2,7 +2,7 @@
 SECTION 01
 */
 .main-container {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .background {
     position: relative;
