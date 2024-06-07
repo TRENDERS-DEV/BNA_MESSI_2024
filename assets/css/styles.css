@@ -369,3 +369,7 @@ section:not(#section-01), #section-04.error #success, #section-04.success #error
     background-position: center;
 }
 
+.user_answer_text {
+    display:none;
+}
+
