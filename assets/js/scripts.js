@@ -215,9 +215,7 @@ function showSection4() {
 function showSection5() {
 
     var answerSum = aUserAnswers.reduce((partialSum, a) => partialSum + a, 0);
-
     $('#user_answer_text_' + answerSum).show();
-
     $('#section-05').fadeIn(400, 'swing');
 }
 
