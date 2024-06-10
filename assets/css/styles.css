@@ -338,6 +338,9 @@ RESPONSIVE
     .share-result-container a img {
         max-width: 20px;
     }
+    #section-05 .col-12.text-right {
+        text-align:center !important;
+    }
 }
 @media only screen and (min-width: 768px) {
     .mobile {
@@ -371,5 +374,13 @@ section:not(#section-01), #section-04.error #success, #section-04.success #error
 
 .user_answer_text {
     display:none;
+    font-family: 'ExpertSans-Regular', sans-serif;
+    color: #FFFFFF;
+    margin-top: 16px;
+    max-width: 284px;
 }
+.user_answer_text img {
+    max-width: 16px;
+}
+
 
